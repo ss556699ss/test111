@@ -10,8 +10,8 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       # 检出当前存储库（可选）
-      - name: Checkout this repository
-        uses: actions/checkout@v3
+      # - name: Checkout this repository
+      #   uses: actions/checkout@v3
 
       # 检出另一个存储库
       - name: Checkout other repository
