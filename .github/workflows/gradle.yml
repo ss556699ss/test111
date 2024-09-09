@@ -29,7 +29,7 @@ jobs:
           ls
           cd  other-repo
           ls
-          yq -i '.key = "new value"' test.yaml 
+          cd  other-repo && ls && yq -i '.key = "new value"' test.yaml 
 
       # 修改目标 YAML 文件
       # - name: Modify YAML file
