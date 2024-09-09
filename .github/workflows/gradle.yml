@@ -20,16 +20,22 @@ jobs:
           repository: ss556699ss/Notebook 
           token:  "${{ secrets.NOTEBOOK }}"
           path: other-repo
-          
-      - name: ls
-        run: ls
+
+      - name: use mikefarah/yq@v4.44.3
+        uses: mikefarah/yq@v4.44.3
+        
+      - name: Modify YAML file
+        run: |
+          cd  other-repo
+          ls
+          yq -i '.key = "new value"' test.yaml 
 
       # 修改目标 YAML 文件
-      - name: Modify YAML file
-        uses: mikefarah/yq@v4.44.3
-        with:
-          # 这里你可以用 sed、yq 或其他工具来修改 YAML 文件
-          cmd: yq -i '.key = "new value"' other-repo/test.yaml  # 修改 YAML 文件的值
+      # - name: Modify YAML file
+      #   uses: mikefarah/yq@v4.44.3
+      #   with:
+      #     # 这里你可以用 sed、yq 或其他工具来修改 YAML 文件
+      #     cmd: yq -i '.key = "new value"' other-repo/test.yaml  # 修改 YAML 文件的值
 
       # # 提交更改
       # - name: Commit and push changes
