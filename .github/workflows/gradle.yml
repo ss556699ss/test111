@@ -20,6 +20,9 @@ jobs:
           repository: ss556699ss/Notebook 
           token:  "${{ secrets.NOTEBOOK }}"
           path: other-repo
+          
+      - name: ls
+        run: ls
 
       # 修改目标 YAML 文件
       - name: Modify YAML file
