@@ -18,7 +18,7 @@ jobs:
         uses: actions/checkout@v3
         with:
           repository: ss556699ss/Notebook 
-          token: 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               
+          token: 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               
           path: other-repo
 
       # 修改目标 YAML 文件
