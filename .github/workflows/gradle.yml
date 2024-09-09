@@ -24,6 +24,7 @@ jobs:
       # 修改目标 YAML 文件
       - name: Modify YAML file
         run: |
+          cd other-repo
           ls
           # 这里你可以用 sed、yq 或其他工具来修改 YAML 文件
           yq eval '.key = "new value"' -i test.yaml  # 修改 YAML 文件的值
