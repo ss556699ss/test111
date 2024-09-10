@@ -22,6 +22,7 @@ jobs:
         
       - name: Modify YAML file
         run: |
+          cd other-repo
           cd  other-repo && yq -i '.key = "new value2"' test.yaml 
 
       # 提交更改
