@@ -9,15 +9,11 @@ jobs:
   modify-file:
     runs-on: ubuntu-latest
     steps:
-      # 检出当前存储库（可选）
-      # - name: Checkout this repository
-      #   uses: actions/checkout@v3
-
       # 检出另一个存储库
       - name: Checkout other repository
         uses: actions/checkout@v3
         with:
-          repository: ss556699ss/Notebook 
+          repository: ss556699ss/springboot-mail 
           token:  "${{ secrets.NOTEBOOK }}"
           path: other-repo
 
@@ -28,7 +24,7 @@ jobs:
         run: |
           cd  other-repo
           ls
-          cd  other-repo && ls && yq -i '.key = "new value1"' test.yaml 
+          cd  other-repo && ls && yq -i '.key = "new value2"' test.yaml 
 
       # 提交更改
       - name: Commit and push changes
