@@ -22,10 +22,8 @@ jobs:
         
       - name: Modify YAML file
         run: |
-          pwd  # 確認當前目錄
-          ls
+          cd other-repo
           cd other-repo && yq eval '.key = "new value22222"' -i test.yaml
-          pwd  # 確認進入 other-repo 後的目錄
       # 提交更改
       - name: Commit and push changes
         run: |
