@@ -26,7 +26,7 @@ jobs:
         run: |
           cd other-repo
           # 这里你可以用 sed、yq 或其他工具来修改 YAML 文件
-          yq eval '.key = "new value"' -i path/to/yourfile.yaml  # 修改 YAML 文件的值
+          cd other-repo && yq eval '.key = "new value"' -i path/to/yourfile.yaml  # 修改 YAML 文件的值
 
       # 提交更改
       - name: Commit and push changes
