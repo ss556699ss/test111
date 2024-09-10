@@ -23,7 +23,7 @@ jobs:
       - name: Modify YAML file
         run: |
           cd other-repo
-          cd other-repo && yq eval '.key = "new value22222"' -i test.yaml
+          cd other-repo && yq eval '.key = "new-$(uuidgen)"' -i test.yaml
       # 提交更改
       - name: Commit and push changes
         run: |
