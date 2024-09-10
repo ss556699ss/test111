@@ -22,8 +22,10 @@ jobs:
         
       - name: Modify YAML file
         run: |
+          pwd
           cd other-repo
-          cd  other-repo && yq -i '.key = "new value2"' test.yaml 
+          pwd
+          cd other-repo && yq -i '.key = "new value"' test.yaml 
 
       # 提交更改
       - name: Commit and push changes
