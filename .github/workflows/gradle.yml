@@ -22,7 +22,7 @@ jobs:
         
       - name: Modify YAML file
         run: |
-          cd  other-repo && ls && yq -i '.key = "new value2"' test.yaml 
+          cd  other-repo && yq -i '.key = "new value2"' test.yaml 
 
       # 提交更改
       - name: Commit and push changes
