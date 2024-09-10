@@ -23,7 +23,8 @@ jobs:
       - name: Modify YAML file
         run: |
           cd other-repo
-          cd other-repo && yq eval '.key = "new-$(uuidgen)"' -i test.yaml
+          UUID=$(uuidgen)  # 生成一個隨機的 UUID
+          cd other-repo && yq eval '.key = "new-'$UUID'"' -i test.yaml
       # 提交更改
       - name: Commit and push changes
         run: |
