@@ -24,6 +24,7 @@ jobs:
         run: |
           cd other-repo
           SHA=${{ github.sha }} 
+          echo '${{ github.sha }}'
           cd other-repo && yq eval '.key = "new-'${SHA}'"' -i test.yaml
       # 提交更改
       - name: Commit and push changes
